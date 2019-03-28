@@ -1,0 +1,5 @@
+server:
+  port: 8080
+community:
+  Size: 3
+  age: 20
