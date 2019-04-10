@@ -52,4 +52,14 @@ public class Community {
     public void setPubTime(String pubTime) {
         this.pubTime = pubTime;
     }
+
+    @Override
+    public String toString() {
+        return "Community{" +
+                "id=" + id +
+                ", actitle='" + actitle + '\'' +
+                ", accontent='" + accontent + '\'' +
+                ", pubTime='" + pubTime + '\'' +
+                '}';
+    }
 }
