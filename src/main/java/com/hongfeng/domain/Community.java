@@ -1,19 +1,33 @@
-package com.hongfeng.community;
+package com.hongfeng.domain;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.xml.soap.Text;
 
-@Component
-@ConfigurationProperties(prefix = "community")
-public class CommunityProperties {
+@Entity
+public class Community {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String actitle;
 
     private String accontent;
 
     private String pubTime;
+
+    public Community() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getActitle() {
         return actitle;

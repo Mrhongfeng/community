@@ -1,8 +1,8 @@
-package com.hongfeng.community;
+package com.hongfeng.repository;
 
+import com.hongfeng.domain.Community;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.xml.soap.Text;
 import java.util.List;
 
 public interface CommunityRepository extends JpaRepository<Community, String> {

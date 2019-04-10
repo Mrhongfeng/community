@@ -1,19 +1,28 @@
-package com.hongfeng.community;
+package com.hongfeng.controller;
 
+import com.hongfeng.aspect.HttpAspect;
+import com.hongfeng.domain.Community;
+import com.hongfeng.repository.CommunityRepository;
+import com.hongfeng.service.CommunityService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.soap.Text;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 public class CommunityController {
 
+    private final static Logger logger = LoggerFactory.getLogger(CommunityController.class);
+
     @Autowired
     private CommunityRepository communityRepository;
+
+    @Autowired
+    private CommunityService communityService;
 
     /**
      * 查询列表
@@ -21,6 +30,8 @@ public class CommunityController {
      */
     @GetMapping(value = "/community")
     public List<Community> communityList(){
+//        System.out.println("communityList");
+        logger.info("communityList");
         return communityRepository.findAll();
     }
 
@@ -96,6 +107,11 @@ public class CommunityController {
     @GetMapping(value = "/community/accontent/{accontent}")
     public List<Community> communityListByAccontent(@PathVariable("accontent") String accontent){
         return communityRepository.findByAccontent(accontent);
+    }
+
+    @PostMapping(value = "/community/two")
+    public void communityTwo(){
+        communityService.insertTwo();
     }
 
 }
