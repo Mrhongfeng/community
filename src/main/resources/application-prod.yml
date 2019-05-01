@@ -1,5 +1,0 @@
-server:
-  port: 8081
-community:
-  Size: 4
-  age: 20

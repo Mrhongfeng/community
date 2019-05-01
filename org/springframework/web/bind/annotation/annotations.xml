@@ -1,5 +1,0 @@
-<root>
-    <item name='org.springframework.web.bind.annotation.PostMapping'>
-        <annotation name='java.lang.Deprecated'/>
-    </item>
-</root>
