@@ -5,14 +5,20 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.stylefeng.guns.common.persistence.model.Community">
         <id column="id" property="id" />
-        <result column="actitle" property="actitle" />
-        <result column="accontent" property="accontent" />
-        <result column="pub_time" property="pubTime" />
+        <result column="acOrg" property="acOrg" />
+        <result column="acTitle" property="acTitle" />
+        <result column="acContent" property="acContent" />
+        <result column="acLocation" property="acLocation" />
+        <result column="acStart_time" property="acstartTime" />
+        <result column="acEnd_time" property="acendTime" />
+        <result column="acThreshold" property="acThreshold" />
+        <result column="acBonus" property="acBonus" />
+        <result column="acState" property="acState" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, actitle, accontent, pub_time AS pubTime
+        id, acOrg, acTitle, acContent, acLocation, acStart_time AS acstartTime, acEnd_time AS acendTime, acThreshold, acBonus, acState
     </sql>
 
 </mapper>

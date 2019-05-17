@@ -46,8 +46,15 @@ CommunityInfoDlg.close = function() {
 CommunityInfoDlg.collectData = function() {
     this
     .set('id')
-    .set('actitle')
-    .set('accontent')
+    .set('acOrg')
+    .set('acTitle')
+    .set('acContent')
+    .set('acLocation')
+    .set('acstartTime')
+    .set('acendTime')
+    .set('acThreshold')
+    .set('acBonus')
+    .set('acState')
     ;
 }
 

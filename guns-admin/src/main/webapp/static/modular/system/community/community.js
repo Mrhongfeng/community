@@ -14,10 +14,16 @@ var Community = {
 Community.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: 'id', field: 'id', visible: true, align: 'center', valign: 'middle'},
-            {title: '活动标题', field: 'actitle', visible: true, align: 'center', valign: 'middle'},
-            {title: '活动内容', field: 'accontent', visible: true, align: 'center', valign: 'middle'},
-            {title: '发布时间', field: 'pubTime', visible: true, align: 'center', valign: 'middle'}
+            {title: '活动id', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动类别', field: 'acOrg', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动标题', field: 'acTitle', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动内容', field: 'acContent', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动地址', field: 'acLocation', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动开始时间', field: 'acstartTime', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动结束时间', field: 'acendTime', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动报名时间', field: 'acThreshold', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动积分奖励', field: 'acBonus', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动状态', field: 'acState', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 
