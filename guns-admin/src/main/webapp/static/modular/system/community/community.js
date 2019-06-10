@@ -21,7 +21,8 @@ Community.initColumn = function () {
             {title: '活动地址', field: 'acLocation', visible: true, align: 'center', valign: 'middle'},
             {title: '活动开始时间', field: 'acstartTime', visible: true, align: 'center', valign: 'middle'},
             {title: '活动结束时间', field: 'acendTime', visible: true, align: 'center', valign: 'middle'},
-            {title: '活动报名时间', field: 'acThreshold', visible: true, align: 'center', valign: 'middle'},
+            {title: '人数上限', field: 'acThreshold', visible: true, align: 'center', valign: 'middle'},
+            {title: '活动门槛', field: 'accredit', visible: true, align: 'center', valign: 'middle'},
             {title: '活动积分奖励', field: 'acBonus', visible: true, align: 'center', valign: 'middle'},
             {title: '活动状态', field: 'acState', visible: true, align: 'center', valign: 'middle'}
     ];

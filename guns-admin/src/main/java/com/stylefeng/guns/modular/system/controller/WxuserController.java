@@ -71,6 +71,7 @@ public class WxuserController extends BaseController {
     public Object add(Wxuser wxuser) {
         wxuserService.insert(wxuser);
         return super.SUCCESS_TIP;
+
     }
 
     /**

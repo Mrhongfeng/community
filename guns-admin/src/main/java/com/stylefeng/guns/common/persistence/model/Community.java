@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author stylefeng123
- * @since 2019-05-17
+ * @since 2019-06-10
  */
 public class Community extends Model<Community> {
 
@@ -52,9 +52,13 @@ public class Community extends Model<Community> {
     @TableField("acEnd_time")
     private String acendTime;
     /**
-     * 活动报名时间
+     * 人数上限
      */
-    private Integer acThreshold;
+    private String acThreshold;
+    /**
+     * 活动门槛
+     */
+    private String accredit;
     /**
      * 活动积分奖励
      */
@@ -121,12 +125,21 @@ public class Community extends Model<Community> {
         this.acendTime = acendTime;
     }
 
-    public Integer getAcThreshold() {
+    public String getAcThreshold() {
         return acThreshold;
     }
 
-    public void setAcThreshold(Integer acThreshold) {
+    public void setAcThreshold(String acThreshold) {
         this.acThreshold = acThreshold;
+    }
+
+
+    public String getAccredit() {
+        return accredit;
+    }
+
+    public void setAccredit(String accredit) {
+        this.accredit = accredit;
     }
 
     public Integer getAcBonus() {
@@ -161,6 +174,7 @@ public class Community extends Model<Community> {
         ", acstartTime=" + acstartTime +
         ", acendTime=" + acendTime +
         ", acThreshold=" + acThreshold +
+        ", accredit=" + accredit +
         ", acBonus=" + acBonus +
         ", acState=" + acState +
         "}";

@@ -12,13 +12,30 @@
         <result column="acStart_time" property="acstartTime" />
         <result column="acEnd_time" property="acendTime" />
         <result column="acThreshold" property="acThreshold" />
+        <result column="accredit" property="accredit" />
         <result column="acBonus" property="acBonus" />
         <result column="acState" property="acState" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, acOrg, acTitle, acContent, acLocation, acStart_time AS acstartTime, acEnd_time AS acendTime, acThreshold, acBonus, acState
+        id, acOrg, acTitle, acContent, acLocation, acStart_time AS acstartTime, acEnd_time AS acendTime, acThreshold, accredit, acBonus, acState
     </sql>
+
+    <select id="search"  parameterType="string" resultType="com.stylefeng.guns.common.persistence.model.Community">
+        <bind name="pattern" value="'%' + keyword + '%'" ></bind>
+        select * from   community where
+        acTitle like #{pattern} OR acContent like #{pattern}
+    </select>
+
+    <select id="endlist"  parameterType="string" resultType="com.stylefeng.guns.common.persistence.model.Community">
+        select * from   community where
+         STR_TO_DATE(acEnd_time,'%Y-%m-%d-%H:%i') &lt; now();
+    </select>
+
+    <select id="holding"  parameterType="string" resultType="com.stylefeng.guns.common.persistence.model.Community">
+        select * from   community where
+         STR_TO_DATE(acEnd_time,'%Y-%m-%d-%H:%i') &gt; now();
+    </select>
 
 </mapper>

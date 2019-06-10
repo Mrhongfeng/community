@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="openId" name="申请者Id" value="${item.openId}" underline="true"/>
+                            <#input id="targetAuth" name="申请身份" value="${item.targetAuth}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="path" name="凭证路径" value="${item.path}" underline="true"/>
+                            <#input id="content" name="申请理由" value="${item.content}" underline="true"/>
+                            <#input id="state" name="申请状态" value="${item.state}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="AuthorityapplicationInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="AuthorityapplicationInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/authorityapplication/authorityapplication_info.js"></script>
+@}

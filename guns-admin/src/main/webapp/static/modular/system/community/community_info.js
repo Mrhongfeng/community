@@ -53,8 +53,8 @@ CommunityInfoDlg.collectData = function() {
     .set('acstartTime')
     .set('acendTime')
     .set('acThreshold')
+    .set('accredit')
     .set('acBonus')
-    .set('acState')
     ;
 }
 

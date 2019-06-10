@@ -1,5 +1,7 @@
 package com.stylefeng.guns.modular.system.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.stylefeng.guns.common.persistence.model.Organizeractivity;
 import com.stylefeng.guns.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,7 @@ import com.stylefeng.guns.modular.system.service.ICommunityService;
  * 社区活动管理控制器
  *
  * @author fengshuonan
- * @Date 2019-05-17 09:09:18
+ * @Date 2019-06-10 15:30:21
  */
 @Controller
 @RequestMapping("/community")
@@ -60,7 +62,7 @@ public class CommunityController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
-        return communityService.selectList(null);
+        return communityService.selectList(new EntityWrapper<Community>().eq("acState","1"));
     }
 
     /**
@@ -101,4 +103,54 @@ public class CommunityController extends BaseController {
     public Object detail(@PathVariable("communityId") Integer communityId) {
         return communityService.selectById(communityId);
     }
+
+    /**
+     * 社区活动根据活动名称及活动内容模糊查询
+     */
+    @RequestMapping(value = "/search")
+    @ResponseBody
+    public Object search(@RequestParam String keyword) {
+        return communityService.search(keyword);
+    }
+
+    /**
+     * 已结束活动
+     */
+    @RequestMapping(value = "/endlist")
+    @ResponseBody
+    public Object endlist() {
+        return communityService.endlist();
+    }
+
+    /**
+     * 进行中活动
+     */
+    @RequestMapping(value = "/holdinglist")
+    @ResponseBody
+    public Object holdinglist() {
+        return communityService.holding();
+    }
+
+    /**
+     * 待审核活动
+     */
+    @RequestMapping(value = "/verifylist")
+    @ResponseBody
+    public Object verifylist() {
+        return communityService.selectList(new EntityWrapper<Community>().eq("acState","0"));
+    }
+
+    /**
+     * 审核通过活动
+     */
+    @RequestMapping(value = "/permit/{communityId}")
+    @ResponseBody
+    public Object permit(@PathVariable("communityId") Integer communityId) {
+        Community community =communityService.selectById(communityId);
+        community.setAcState(1);
+        communityService.updateById(community);
+        return super.SUCCESS_TIP;
+    }
+
+
 }
