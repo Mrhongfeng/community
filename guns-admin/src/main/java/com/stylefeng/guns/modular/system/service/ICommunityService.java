@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.service.IService;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -18,4 +19,6 @@ public interface ICommunityService extends IService<Community> {
     List<Community> search(@Param("keyword") String keyword);
     List<Community> endlist();
     List<Community> holding();
+
+    Map translation(Community attribute);
 }

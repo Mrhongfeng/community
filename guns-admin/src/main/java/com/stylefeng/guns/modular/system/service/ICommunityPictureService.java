@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.service.IService;
  * </p>
  *
  * @author stylefeng123
- * @since 2019-06-10
+ * @since 2019-06-11
  */
 public interface ICommunityPictureService extends IService<CommunityPicture> {
 

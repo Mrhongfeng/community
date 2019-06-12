@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -32,5 +33,10 @@ public class CommunityServiceImpl extends ServiceImpl<CommunityMapper, Community
 
     public List<Community> holding(){
         return communityMapper.holding();
+    }
+
+    @Override
+    public Map translation(Community attribute) {
+        return (Map) attribute;
     }
 }

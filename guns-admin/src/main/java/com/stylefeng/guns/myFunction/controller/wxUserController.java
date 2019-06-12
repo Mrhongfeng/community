@@ -23,7 +23,7 @@ import java.util.Map;
 
 @Service
 @Controller
-@RequestMapping(value = "/auth/Wxuser")
+@RequestMapping(value = "/community/Wxuser")
 public class wxUserController {
 
     private static final Logger logger = LoggerFactory.getLogger(wxUserController.class);

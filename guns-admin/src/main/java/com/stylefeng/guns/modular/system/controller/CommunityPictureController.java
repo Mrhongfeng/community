@@ -13,13 +13,13 @@ import com.stylefeng.guns.common.persistence.model.CommunityPicture;
 import com.stylefeng.guns.modular.system.service.ICommunityPictureService;
 
 /**
- * 社区活动图片控制器
+ * 社区活动图片管理控制器
  *
  * @author fengshuonan
- * @Date 2019-06-10 11:24:22
+ * @Date 2019-06-11 14:57:59
  */
 @Controller
-@RequestMapping("/community/communityPicture")
+@RequestMapping("/communityPicture")
 public class CommunityPictureController extends BaseController {
 
     private String PREFIX = "/system/communityPicture/";
@@ -28,7 +28,7 @@ public class CommunityPictureController extends BaseController {
     private ICommunityPictureService communityPictureService;
 
     /**
-     * 跳转到社区活动图片首页
+     * 跳转到社区活动图片管理首页
      */
     @RequestMapping("")
     public String index() {
@@ -36,7 +36,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 跳转到添加社区活动图片
+     * 跳转到添加社区活动图片管理
      */
     @RequestMapping("/communityPicture_add")
     public String communityPictureAdd() {
@@ -44,7 +44,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 跳转到修改社区活动图片
+     * 跳转到修改社区活动图片管理
      */
     @RequestMapping("/communityPicture_update/{communityPictureId}")
     public String communityPictureUpdate(@PathVariable Integer communityPictureId, Model model) {
@@ -55,7 +55,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 获取社区活动图片列表
+     * 获取社区活动图片管理列表
      */
     @RequestMapping(value = "/list")
     @ResponseBody
@@ -64,7 +64,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 新增社区活动图片
+     * 新增社区活动图片管理
      */
     @RequestMapping(value = "/add")
     @ResponseBody
@@ -74,7 +74,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 删除社区活动图片
+     * 删除社区活动图片管理
      */
     @RequestMapping(value = "/delete")
     @ResponseBody
@@ -84,7 +84,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 修改社区活动图片
+     * 修改社区活动图片管理
      */
     @RequestMapping(value = "/update")
     @ResponseBody
@@ -94,7 +94,7 @@ public class CommunityPictureController extends BaseController {
     }
 
     /**
-     * 社区活动图片详情
+     * 社区活动图片管理详情
      */
     @RequestMapping(value = "/detail/{communityPictureId}")
     @ResponseBody

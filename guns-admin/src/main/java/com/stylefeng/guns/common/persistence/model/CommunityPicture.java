@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author stylefeng123
- * @since 2019-06-10
+ * @since 2019-06-11
  */
 @TableName("community_picture")
 public class CommunityPicture extends Model<CommunityPicture> {

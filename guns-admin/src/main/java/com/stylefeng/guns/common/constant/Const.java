@@ -38,7 +38,7 @@ public interface Const {
     /**
      * 上传文件路径
      */
-    String IMAGE_SAVE_PATH_Windows="C:\\Users\\hhf\\image";
+    String IMAGE_SAVE_PATH_Windows="C:\\Users\\honfus\\Desktop\\images";
 
     /**
      * linux上传文件目录

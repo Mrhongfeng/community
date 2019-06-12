@@ -17,13 +17,13 @@ public class PictureData{
      */
     private String filePath;
     /**
-     * 所属问题摘要
+     * 所属活动摘要
      */
-    private String abstracts;
+    private String acTitle;
     /**
      * 所属问题内容
      */
-    private String writeContests;
+    private String acContent;
 
 
     public Integer getId() {
@@ -50,29 +50,30 @@ public class PictureData{
         this.filePath = filePath;
     }
 
-    public String getAbstracts() {
-        return abstracts;
+    public String getAcTitle() {
+        return acTitle;
     }
 
-    public void setAbstracts(String abstracts) {
-        this.abstracts = abstracts;
+    public void setAcTitle(String acTitle) {
+        this.acTitle = acTitle;
     }
 
-    public String getWriteContests() {
-        return writeContests;
+    public String getAcContent() {
+        return acContent;
     }
 
-    public void setWriteContests(String writeContests) {
-        this.writeContests = writeContests;
+    public void setAcContent(String acContent) {
+        this.acContent = acContent;
     }
+
     @Override
     public String toString() {
         return "WallPicture{" +
                 "id=" + id +
                 ", fileName=" + fileName +
                 ", filePath=" + filePath +
-                ", abstracts=" + abstracts +
-                ", writeContests=" + writeContests +
+                ", acTitle=" + acTitle +
+                ", acContent=" + acContent +
                 "}";
     }
 }

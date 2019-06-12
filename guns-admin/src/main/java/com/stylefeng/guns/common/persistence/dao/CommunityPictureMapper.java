@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author stylefeng123
- * @since 2019-06-10
+ * @since 2019-06-11
  */
 public interface CommunityPictureMapper extends BaseMapper<CommunityPicture> {
 
