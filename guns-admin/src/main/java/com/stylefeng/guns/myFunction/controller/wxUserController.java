@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -44,9 +43,9 @@ public class wxUserController {
         }
 
         //小程序唯一标识   (在微信小程序管理后台获取)
-        String wxspAppid = "wx7c6765dd250317b1";
+        String wxspAppid = "wx6d60e24e49efc98e";
         //小程序的 app secret (在微信小程序管理后台获取)
-        String wxspSecret = "0ca1f4ba21660864cf4e11edf1089ede";
+        String wxspSecret = "b745636e0e9036dcd855d9a5dc2a3fb8";
         //授权（必填）
         String grant_type = "authorization_code";
 
@@ -79,9 +78,10 @@ public class wxUserController {
                 userInfo.put("country", userInfoJSON.get("country"));
                 userInfo.put("province", userInfoJSON.get("province"));
                 userInfo.put("city", userInfoJSON.get("city"));
-                userInfo.put("authority", userInfoJSON.get("authority"));
+                userInfo.put("authority", "0");
                 userInfo.put("credit", userInfoJSON.get("credit"));
                 map.put("userInfo", userInfo);
+                System.out.println("map:::"+userInfo);
                 //存下来
                 List<Wxuser> wxusers = wxusermapper.selectList(new EntityWrapper<Wxuser>().eq("openId",openid));
                 if(wxusers.isEmpty()){
@@ -93,15 +93,20 @@ public class wxUserController {
                     wxuser.setCountry(String.valueOf(userInfoJSON.get("country")));
                     wxuser.setProvince(String.valueOf(userInfoJSON.get("province")));
                     wxuser.setCity(String.valueOf(userInfoJSON.get("city")));
-                    wxuser.setAuthority(String.valueOf(userInfoJSON.get("authority")));
-                    wxuser.setCredit(String.valueOf(userInfoJSON.get("credit")));
+                    wxuser.setAuthority(String.valueOf("0"));
+                    wxuser.setCredit(String.valueOf("100"));
                     wxusermapper.insert(wxuser);
                     logger.info(wxuser.toString());
-                    map.put("Authority","inexist");
-                }else  if(wxusers.get(0).getAuthority() == "1")
-                    map.put("Authority","exist");
-                else
-                    map.put("Authority","inexist");
+                }else if(wxusers.get(0).getAuthority().equals("0"))
+                    map.put("Authority","0");
+                else if(wxusers.get(0).getAuthority().equals("1"))
+                    map.put("Authority","1");
+                else if(wxusers.get(0).getAuthority().equals("2"))
+                    map.put("Authority","2");
+                else if(wxusers.get(0).getAuthority().equals("3"))
+                    map.put("Authority","3");
+                else if(wxusers.get(0).getAuthority().equals("4"))
+                    map.put("Authority","4");
                 return map;
             }
         } catch (Exception e) {
